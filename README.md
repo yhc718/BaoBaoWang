@@ -1,4 +1,5 @@
 # BaoBaoWang
+![Game Screenshot](game.png)
 
 BaoBaoWang is a simple maze game implemented in the **Jack language**, created for the [Nand2Tetris](https://www.nand2tetris.org/) course.
 
