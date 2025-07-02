@@ -1,0 +1,69 @@
+class BaoBaoWang {
+    function void clear_character(int x, int y){
+        do Screen.setColor(false);
+        do Screen.drawCircle(15 + (20 * x), 256 - (19 + (20 * y)), 8);
+        return;
+        // do Screen.drawRectangle();
+    }
+
+    function void draw_character(int x, int y){
+        do Screen.setColor(true);
+        do Screen.drawCircle(15 + (20 * x), 256 - (19 + (20 * y)), 8);
+        do Screen.setColor(false);
+        do Screen.drawCircle(15 + (20 * x) - 4, 256 - (19 + (20 * y)), 2);
+        do Screen.drawCircle(15 + (20 * x) + 4, 256 - (19 + (20 * y)), 2);
+        return;
+    }
+
+    function int move_x(int x, int y, int operation, Array map){
+        var Array xmap;
+        
+        if (operation = 130){ // left arrow
+            if (~(x = 0)){
+                let xmap = map[x - 1];
+                if ((xmap[10 - y] = 0) | (xmap[10 - y] = 3)){
+                    do BaoBaoWang.clear_character(x, y);
+                    do BaoBaoWang.draw_character(x - 1, y);
+                    return x - 1;
+                }
+            }
+        } 
+        if (operation = 132){ // right arrow
+            if (~(x = 24)){
+                let xmap = map[x + 1];
+                if ((xmap[10 - y] = 0) | (xmap[10 - y] = 3)){
+                    do BaoBaoWang.clear_character(x, y);
+                    do BaoBaoWang.draw_character(x + 1, y);
+                    return x + 1;
+                }
+            }
+        }
+        return x;
+    }
+
+    function int move_y(int x, int y, int operation, Array map){
+        var Array xmap;
+        let xmap = map[x];
+        if (operation = 131){ // up arrow
+            if (~(y = 10)){
+                if ((xmap[10 - (y + 1)] = 0) | (xmap[10 - (y + 1)] = 3)){
+                    do BaoBaoWang.clear_character(x, y);
+                    do BaoBaoWang.draw_character(x, y + 1);
+                    return y + 1;
+                }
+            }
+        }
+        if (operation = 133){ // down arrow
+            if (~(y = 0)){
+                if ((xmap[10 - (y - 1)] = 0) | (xmap[10 - (y - 1)] = 3)){
+                    do BaoBaoWang.clear_character(x, y);
+                    do BaoBaoWang.draw_character(x, y - 1);
+                    return y - 1;
+                }
+            }
+        }
+        return y;
+    }
+
+    
+}

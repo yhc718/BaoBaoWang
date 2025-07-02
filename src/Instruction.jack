@@ -1,0 +1,25 @@
+class Instruction{
+    function void instructions(){
+        do Screen.setColor(false);
+        do Screen.drawRectangle(0, 0, 511, 255);
+        do Output.moveCursor(7, 0);
+        do Output.printString("The goal of the game is to reach the upright E-spot of the maze");
+        do Output.println();
+        do Output.printString("The black cubs are unbreakable walls.");
+        do Output.println();
+        do Output.printString("And those with white circle in them are breakable ones.");
+        do Output.println();
+        do Output.printString("You can drop bombs to destroy walls in the cross direction.");
+        do Output.println();
+        do Output.printString("Use direction keys to move the character.");
+        do Output.println();
+        do Output.printString("Use enter to drop bombs, backspace to restart the level.");
+        do Output.println();
+        do Output.printString("Try to reach the goal in limited steps and bombs!");
+        do Output.println();
+        do Output.printString("Press \"enter\" to enter the game.");
+        do Output.println();
+        do Output.printString("Good Luck!");
+        return;
+    }
+}

@@ -1,0 +1,404 @@
+class Level2{
+    static int i;
+
+    function Array x0(){
+        var Array xmap;
+        let xmap = Array.new(11);
+
+        let i = 0;
+        while(i < 11){
+            let xmap[i] = 0;
+            let i = i + 1;
+        }
+        let xmap[5] = 1;
+        let xmap[7] = 1;
+        return xmap;
+    }
+    function Array x1(){
+        var Array xmap;
+        let xmap = Array.new(11);
+
+        let i = 0;
+        while(i < 11){
+            let xmap[i] = 0;
+            let i = i + 1;
+        }
+        let xmap[5] = 1;
+        let xmap[7] = 1;
+        return xmap;
+    }
+    function Array x2(){
+        var Array xmap;
+        let xmap = Array.new(11);
+
+        let i = 0;
+        while(i < 11){
+            let xmap[i] = 0;
+            let i = i + 1;
+        }
+        let xmap[5] = 1;
+        return xmap;
+    }
+    function Array x3(){
+        var Array xmap;
+        let xmap = Array.new(11);
+
+        let i = 0;
+        while(i < 11){
+            let xmap[i] = 0;
+            let i = i + 1;
+        }
+        let xmap[5] = 1;
+        let xmap[6] = 2;
+        let xmap[7] = 1;
+        let xmap[9] = 1;
+        return xmap;
+    }
+    function Array x4(){
+        var Array xmap;
+        let xmap = Array.new(11);
+
+        let i = 0;
+        while(i < 11){
+            let xmap[i] = 0;
+            let i = i + 1;
+        }
+        let xmap[4] = 1;
+        let xmap[8] = 1;
+        let xmap[9] = 3;
+        return xmap;
+    }
+    function Array x5(){
+        var Array xmap;
+        let xmap = Array.new(11);
+
+        let i = 0;
+        while(i < 11){
+            let xmap[i] = 0;
+            let i = i + 1;
+        }
+        let xmap[3] = 1;
+        let xmap[4] = 2;
+        let xmap[6] = 2;
+        let xmap[9] = 1;
+        let xmap[10] = 1;
+        return xmap;
+    }
+    function Array x6(){
+        var Array xmap;
+        let xmap = Array.new(11);
+
+        let i = 0;
+        while(i < 11){
+            let xmap[i] = 0;
+            let i = i + 1;
+        }
+        let xmap[4] = 1;
+        let xmap[5] = 1;
+        let xmap[7] = 1;
+        let xmap[8] = 1;
+        let xmap[9] = 3;
+        return xmap;
+    }
+    function Array x7(){
+        var Array xmap;
+        let xmap = Array.new(11);
+
+        let i = 0;
+        while(i < 11){
+            let xmap[i] = 0;
+            let i = i + 1;
+        }
+        let xmap[5] = 1;
+        let xmap[9] = 1;
+        return xmap;
+    }
+    function Array x8(){
+        var Array xmap;
+        let xmap = Array.new(11);
+
+        let i = 0;
+        while(i < 11){
+            let xmap[i] = 0;
+            let i = i + 1;
+        }
+        let xmap[4] = 1;
+        let xmap[7] = 1;
+        let xmap[8] = 2;
+        return xmap;
+    }
+    function Array x9(){
+        var Array xmap;
+        let xmap = Array.new(11);
+
+        let i = 0;
+        while(i < 11){
+            let xmap[i] = 0;
+            let i = i + 1;
+        }
+        let xmap[4] = 1;
+        let xmap[6] = 1;
+        let xmap[9] = 1;
+        return xmap;
+    }
+    function Array x10(){
+        var Array xmap;
+        let xmap = Array.new(11);
+
+        let i = 0;
+        while(i < 11){
+            let xmap[i] = 0;
+            let i = i + 1;
+        }
+        let xmap[0] = 1;
+        let xmap[2] = 1;
+        let xmap[5] = 1;
+        let xmap[10] = 1;
+        return xmap;
+    }
+    function Array x11(){
+        var Array xmap;
+        let xmap = Array.new(11);
+
+        let i = 0;
+        while(i < 11){
+            let xmap[i] = 0;
+            let i = i + 1;
+        }
+        let xmap[0] = 3;
+        let xmap[1] = 1;
+        let xmap[3] = 1;
+        let xmap[7] = 1;
+        let xmap[10] = 1;
+        return xmap;
+    }
+    function Array x12(){
+        var Array xmap;
+        let xmap = Array.new(11);
+
+        let i = 0;
+        while(i < 11){
+            let xmap[i] = 0;
+            let i = i + 1;
+        }
+        let xmap[1] = 1;
+        let xmap[3] = 1;
+        let xmap[4] = 1;
+        let xmap[5] = 1;
+        let xmap[6] = 1;
+        return xmap;
+    }
+    function Array x13(){
+        var Array xmap;
+        let xmap = Array.new(11);
+
+        let i = 0;
+        while(i < 11){
+            let xmap[i] = 0;
+            let i = i + 1;
+        }
+        let xmap[2] = 2;
+        let xmap[7] = 2;
+        let xmap[8] = 1;
+        let xmap[9] = 1;
+        return xmap;
+    }
+    function Array x14(){
+        var Array xmap;
+        let xmap = Array.new(11);
+
+        let i = 0;
+        while(i < 11){
+            let xmap[i] = 0;
+            let i = i + 1;
+        }
+        let xmap[1] = 1;
+        let xmap[3] = 1;
+        let xmap[4] = 1;
+        let xmap[5] = 1;
+        let xmap[6] = 1;
+        let xmap[7] = 1;
+        let xmap[8] = 1;
+        return xmap;
+    }
+    function Array x15(){
+        var Array xmap;
+        let xmap = Array.new(11);
+
+        let i = 0;
+        while(i < 11){
+            let xmap[i] = 0;
+            let i = i + 1;
+        }
+        let xmap[1] = 1;
+        let xmap[9] = 1;
+        return xmap;
+    }
+    function Array x16(){
+        var Array xmap;
+        let xmap = Array.new(11);
+
+        let i = 0;
+        while(i < 11){
+            let xmap[i] = 0;
+            let i = i + 1;
+        }
+        let xmap[0] = 1;
+        let xmap[1] = 2;
+        let xmap[9] = 1;
+        return xmap;
+    }
+    function Array x17(){
+        var Array xmap;
+        let xmap = Array.new(11);
+
+        let i = 0;
+        while(i < 11){
+            let xmap[i] = 0;
+            let i = i + 1;
+        }
+        let xmap[2] = 1;
+        let xmap[9] = 1;
+        let xmap[10] = 3;
+        return xmap;
+    }
+    function Array x18(){
+        var Array xmap;
+        let xmap = Array.new(11);
+
+        let i = 0;
+        while(i < 11){
+            let xmap[i] = 0;
+            let i = i + 1;
+        }
+        let xmap[2] = 1;
+        let xmap[3] = 1;
+        let xmap[9] = 1;
+        return xmap;
+    }
+    function Array x19(){
+        var Array xmap;
+        let xmap = Array.new(11);
+
+        let i = 0;
+        while(i < 11){
+            let xmap[i] = 0;
+            let i = i + 1;
+        }
+        let xmap[1] = 1;
+        let xmap[4] = 2;
+        let xmap[7] = 1;
+        let xmap[8] = 1;
+        let xmap[9] = 1;
+        return xmap;
+    }
+    function Array x20(){
+        var Array xmap;
+        let xmap = Array.new(11);
+
+        let i = 0;
+        while(i < 11){
+            let xmap[i] = 0;
+            let i = i + 1;
+        }
+        let xmap[1] = 1;
+        let xmap[3] = 1;
+        let xmap[4] = 1;
+        let xmap[5] = 1;
+        let xmap[6] = 1;
+        let xmap[7] = 1;
+        return xmap;
+    }
+    function Array x21(){
+        var Array xmap;
+        let xmap = Array.new(11);
+
+        let i = 0;
+        while(i < 11){
+            let xmap[i] = 0;
+            let i = i + 1;
+        }
+        let xmap[0] = 1;
+        let xmap[3] = 1;
+        let xmap[7] = 1;
+        let xmap[9] = 1;
+        let xmap[10] = 1;
+        return xmap;
+    }
+    function Array x22(){
+        var Array xmap;
+        let xmap = Array.new(11);
+
+        let i = 0;
+        while(i < 11){
+            let xmap[i] = 0;
+            let i = i + 1;
+        }
+        let xmap[0] = 1;
+        let xmap[1] = 2;
+        let xmap[2] = 1;
+        let xmap[7] = 1;
+        return xmap;
+    }
+    function Array x23(){
+        var Array xmap;
+        let xmap = Array.new(11);
+
+        let i = 0;
+        while(i < 11){
+            let xmap[i] = 0;
+            let i = i + 1;
+        }
+        let xmap[2] = 2;
+        let xmap[7] = 1;
+        let xmap[8] = 1;
+        let xmap[9] = 1;
+        return xmap;
+    }
+    function Array x24(){
+        var Array xmap;
+        let xmap = Array.new(11);
+
+        let i = 0;
+        while(i < 11){
+            let xmap[i] = 0;
+            let i = i + 1;
+        }
+        let xmap[2] = 1;
+        let xmap[8] = 1;
+        let xmap[9] = 3;
+        return xmap;
+    }
+
+    function array level2_array(){
+        var Array map;
+        let map = Array.new(25);
+        let map[0] = Level2.x0();
+        let map[1] = Level2.x1();
+        let map[2] = Level2.x2();
+        let map[3] = Level2.x3();
+        let map[4] = Level2.x4();
+        let map[5] = Level2.x5();
+        let map[6] = Level2.x6();
+        let map[7] = Level2.x7();
+        let map[8] = Level2.x8();
+        let map[9] = Level2.x9();
+        let map[10] = Level2.x10();
+        let map[11] = Level2.x11();
+        let map[12] = Level2.x12();
+        let map[13] = Level2.x13();
+        let map[14] = Level2.x14();
+        let map[15] = Level2.x15();
+        let map[16] = Level2.x16();
+        let map[17] = Level2.x17();
+        let map[18] = Level2.x18();
+        let map[19] = Level2.x19();
+        let map[20] = Level2.x20();
+        let map[21] = Level2.x21();
+        let map[22] = Level2.x22();
+        let map[23] = Level2.x23();
+        let map[24] = Level2.x24();
+        return map;
+    }
+    
+}

@@ -1,0 +1,10 @@
+class Fail{
+    function void level_failed(){
+        do Screen.setColor(true);
+        do Screen.drawRectangle(0, 0, 511, 255);
+        do Output.moveCursor(0, 0);
+        do Output.printString(" Failed. You are so pathetic. QQ ");
+        do Output.moveCursor(0, 63);
+        return;
+    }
+}

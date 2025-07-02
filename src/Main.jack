@@ -1,0 +1,146 @@
+class Main {
+    static int operation;
+    static int temp;
+    static int index_x, index_y;
+    static int bombs;
+    static int steps;
+    static int level;
+    static Array map;
+
+    function void reset(){
+        if (level = 1){
+            do Main.level1_init();
+        }
+        if (level = 2){
+            do Main.level2_init();
+        }
+        if (level = 3){
+            do Main.level3_init();
+        }
+        return;
+    }
+
+    function void level1_init(){
+        let level = 1;
+        let index_x = 0;
+        let index_y = 0;
+        let steps = 100;
+        let bombs = 5;
+        do Map.print_map();
+        let map = Level1.level1_array();
+        do Map.print_wall(map);
+
+        do Bomb.bombs_number(bombs);
+        do Steps.steps_number(steps);
+        
+        
+        do BaoBaoWang.draw_character(index_x, index_y);
+        return;
+    }
+
+    function void level2_init(){
+        let level = 2;
+        let index_x = 0;
+        let index_y = 0;
+        let steps = 100;
+        let bombs = 5;
+        do Map.print_map();
+        let map = Level2.level2_array();
+        do Map.print_wall(map);
+
+        do Bomb.bombs_number(bombs);
+        do Steps.steps_number(steps);
+        
+        
+        do BaoBaoWang.draw_character(index_x, index_y);
+        return;
+    }
+
+    function void level3_init(){
+        let level = 3;
+        let index_x = 0;
+        let index_y = 0;
+        let steps = 60;
+        let bombs = 3;
+        do Map.print_map();
+        let map = Level3.level3_array();
+        do Map.print_wall(map);
+
+        do Bomb.bombs_number(bombs);
+        do Steps.steps_number(steps);
+        
+        
+        do BaoBaoWang.draw_character(index_x, index_y);
+        return;
+    }
+    
+    function void main () {
+        do Cover.make_cover();
+
+        while(~(operation = 128)){
+            let operation = Keyboard.keyPressed();
+            if (operation = 142){
+                do Instruction.instructions();
+            }
+        }
+        do Main.level1_init();
+        while(~(operation = 0)){
+            let operation = Keyboard.keyPressed();
+        }
+        while(true){
+            while(steps > 0){
+                let operation = 0;
+                while(operation = 0){
+                    let operation = Keyboard.keyPressed();
+                }
+                let temp = operation;
+                while(~(operation = 0)){
+                    let operation = Keyboard.keyPressed();
+                }
+                let operation = temp;
+
+                let steps = Steps.move_step(steps, index_x, index_y, operation, map);
+
+                let index_x = BaoBaoWang.move_x(index_x, index_y, operation, map);
+                let index_y = BaoBaoWang.move_y(index_x, index_y, operation, map);
+                let bombs = Bomb.move_bombs(bombs, index_x, index_y, operation, map);
+                let map = Bomb.change_map(index_x, index_y, bombs, operation, map);
+                do Bomb.bombs_number(bombs);
+                do Steps.steps_number(steps);
+
+                if ((index_x = 24) & (index_y = 10)){
+                    do Pass.level_passed(level);
+                    if (level = 3){
+                        return;
+                    }
+                    while(~(operation = 128)){
+                        let operation = Keyboard.keyPressed();
+                    }
+                    while(~(operation = 0)){
+                        let operation = Keyboard.keyPressed();
+                    }
+                    if (level = 2){
+                        do Main.level3_init();
+                    }
+                    if (level = 1){
+                        do Main.level2_init();
+                    }
+
+                }
+                if (operation = 129){
+                    do Main.reset();
+                }
+            }
+            do Fail.level_failed();
+            while(~(operation = 129)){
+                let operation = Keyboard.keyPressed();
+            }
+            while(~(operation = 0)){
+                let operation = Keyboard.keyPressed();
+            }
+            do Main.reset();
+        }
+        return;
+    } 
+
+}

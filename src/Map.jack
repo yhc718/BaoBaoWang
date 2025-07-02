@@ -1,0 +1,219 @@
+class Map {
+    function void print_map(){
+        var int i, j;
+
+        do Screen.setColor(true);
+        do Screen.drawRectangle(0, 0, 511, 255);
+        do Screen.setColor(false);
+        
+        let i = 1;
+        while (i < 12){
+            let j = 0;
+            while (j < 25){
+                do Screen.drawRectangle((7 + (j * 20)), (9 + (i * 20)), (7 + (j * 20) + 16), (9 + (i * 20) + 16));
+                let j = j + 1;
+            }
+            let i = i + 1;
+        }
+
+        do Output.moveCursor(1, 2);
+        do Output.printString(" BAO BAO WANG! ");
+
+        do Output.moveCursor(21, 1);
+        do Output.printString("S");
+        
+        do Output.moveCursor(3, 62);
+        do Output.printString("E");
+        return;
+    }
+
+    function void draw_wall(int x, int y){
+        do Screen.setColor(true);
+        do Screen.drawRectangle((7 + (x * 20)), (9 + (y * 20)), (7 + (x * 20) + 16), (9 + (y * 20) + 16));
+        return;
+    }
+
+    function void draw_breakable_wall(int x, int y){
+        do Screen.setColor(true);
+        do Screen.drawPixel((7 + (x * 20) + 0), (9 + (y * 20) + 1));
+        do Screen.drawPixel((7 + (x * 20) + 1), (9 + (y * 20) + 1));
+        do Screen.drawPixel((7 + (x * 20) + 2), (9 + (y * 20) + 1));
+        do Screen.drawPixel((7 + (x * 20) + 3), (9 + (y * 20) + 1));
+        do Screen.drawPixel((7 + (x * 20) + 4), (9 + (y * 20) + 1));
+        do Screen.drawPixel((7 + (x * 20) + 6), (9 + (y * 20) + 1));
+        do Screen.drawPixel((7 + (x * 20) + 7), (9 + (y * 20) + 1));
+        do Screen.drawPixel((7 + (x * 20) + 8), (9 + (y * 20) + 1));
+        do Screen.drawPixel((7 + (x * 20) + 9), (9 + (y * 20) + 1));
+        do Screen.drawPixel((7 + (x * 20) + 11), (9 + (y * 20) + 1));
+        do Screen.drawPixel((7 + (x * 20) + 12), (9 + (y * 20) + 1));
+        do Screen.drawPixel((7 + (x * 20) + 13), (9 + (y * 20) + 1));
+        do Screen.drawPixel((7 + (x * 20) + 14), (9 + (y * 20) + 1));
+        do Screen.drawPixel((7 + (x * 20) + 15), (9 + (y * 20) + 1));
+        do Screen.drawPixel((7 + (x * 20) + 0), (9 + (y * 20) + 3));
+        do Screen.drawPixel((7 + (x * 20) + 1), (9 + (y * 20) + 3));
+        do Screen.drawPixel((7 + (x * 20) + 3), (9 + (y * 20) + 3));
+        do Screen.drawPixel((7 + (x * 20) + 4), (9 + (y * 20) + 3));
+        do Screen.drawPixel((7 + (x * 20) + 5), (9 + (y * 20) + 3));
+        do Screen.drawPixel((7 + (x * 20) + 6), (9 + (y * 20) + 3));
+        do Screen.drawPixel((7 + (x * 20) + 9), (9 + (y * 20) + 3));
+        do Screen.drawPixel((7 + (x * 20) + 10), (9 + (y * 20) + 3));
+        do Screen.drawPixel((7 + (x * 20) + 11), (9 + (y * 20) + 3));
+        do Screen.drawPixel((7 + (x * 20) + 12), (9 + (y * 20) + 3));
+        do Screen.drawPixel((7 + (x * 20) + 15), (9 + (y * 20) + 3));
+        do Screen.drawPixel((7 + (x * 20) + 0), (9 + (y * 20) + 4));
+        do Screen.drawPixel((7 + (x * 20) + 1), (9 + (y * 20) + 4));
+        do Screen.drawPixel((7 + (x * 20) + 3), (9 + (y * 20) + 4));
+        do Screen.drawPixel((7 + (x * 20) + 4), (9 + (y * 20) + 4));
+        do Screen.drawPixel((7 + (x * 20) + 5), (9 + (y * 20) + 4));
+        do Screen.drawPixel((7 + (x * 20) + 6), (9 + (y * 20) + 4));
+        do Screen.drawPixel((7 + (x * 20) + 7), (9 + (y * 20) + 4));
+        do Screen.drawPixel((7 + (x * 20) + 8), (9 + (y * 20) + 4));
+        do Screen.drawPixel((7 + (x * 20) + 9), (9 + (y * 20) + 4));
+        do Screen.drawPixel((7 + (x * 20) + 10), (9 + (y * 20) + 4));
+        do Screen.drawPixel((7 + (x * 20) + 11), (9 + (y * 20) + 4));
+        do Screen.drawPixel((7 + (x * 20) + 12), (9 + (y * 20) + 4));
+        do Screen.drawPixel((7 + (x * 20) + 14), (9 + (y * 20) + 4));
+        do Screen.drawPixel((7 + (x * 20) + 15), (9 + (y * 20) + 4));
+        do Screen.drawPixel((7 + (x * 20) + 0), (9 + (y * 20) + 5));
+        do Screen.drawPixel((7 + (x * 20) + 1), (9 + (y * 20) + 5));
+        do Screen.drawPixel((7 + (x * 20) + 3), (9 + (y * 20) + 5));
+        do Screen.drawPixel((7 + (x * 20) + 4), (9 + (y * 20) + 5));
+        do Screen.drawPixel((7 + (x * 20) + 5), (9 + (y * 20) + 5));
+        do Screen.drawPixel((7 + (x * 20) + 6), (9 + (y * 20) + 5));
+        do Screen.drawPixel((7 + (x * 20) + 9), (9 + (y * 20) + 5));
+        do Screen.drawPixel((7 + (x * 20) + 10), (9 + (y * 20) + 5));
+        do Screen.drawPixel((7 + (x * 20) + 11), (9 + (y * 20) + 5));
+        do Screen.drawPixel((7 + (x * 20) + 12), (9 + (y * 20) + 5));
+        do Screen.drawPixel((7 + (x * 20) + 15), (9 + (y * 20) + 5));
+        do Screen.drawPixel((7 + (x * 20) + 0), (9 + (y * 20) + 7));
+        do Screen.drawPixel((7 + (x * 20) + 1), (9 + (y * 20) + 7));
+        do Screen.drawPixel((7 + (x * 20) + 2), (9 + (y * 20) + 7));
+        do Screen.drawPixel((7 + (x * 20) + 3), (9 + (y * 20) + 7));
+        do Screen.drawPixel((7 + (x * 20) + 4), (9 + (y * 20) + 7));
+        do Screen.drawPixel((7 + (x * 20) + 6), (9 + (y * 20) + 7));
+        do Screen.drawPixel((7 + (x * 20) + 7), (9 + (y * 20) + 7));
+        do Screen.drawPixel((7 + (x * 20) + 8), (9 + (y * 20) + 7));
+        do Screen.drawPixel((7 + (x * 20) + 9), (9 + (y * 20) + 7));
+        do Screen.drawPixel((7 + (x * 20) + 11), (9 + (y * 20) + 7));
+        do Screen.drawPixel((7 + (x * 20) + 12), (9 + (y * 20) + 7));
+        do Screen.drawPixel((7 + (x * 20) + 13), (9 + (y * 20) + 7));
+        do Screen.drawPixel((7 + (x * 20) + 14), (9 + (y * 20) + 7));
+        do Screen.drawPixel((7 + (x * 20) + 15), (9 + (y * 20) + 7));
+        do Screen.drawPixel((7 + (x * 20) + 0), (9 + (y * 20) + 8));
+        do Screen.drawPixel((7 + (x * 20) + 1), (9 + (y * 20) + 8));
+        do Screen.drawPixel((7 + (x * 20) + 2), (9 + (y * 20) + 8));
+        do Screen.drawPixel((7 + (x * 20) + 3), (9 + (y * 20) + 8));
+        do Screen.drawPixel((7 + (x * 20) + 4), (9 + (y * 20) + 8));
+        do Screen.drawPixel((7 + (x * 20) + 6), (9 + (y * 20) + 8));
+        do Screen.drawPixel((7 + (x * 20) + 7), (9 + (y * 20) + 8));
+        do Screen.drawPixel((7 + (x * 20) + 8), (9 + (y * 20) + 8));
+        do Screen.drawPixel((7 + (x * 20) + 9), (9 + (y * 20) + 8));
+        do Screen.drawPixel((7 + (x * 20) + 11), (9 + (y * 20) + 8));
+        do Screen.drawPixel((7 + (x * 20) + 12), (9 + (y * 20) + 8));
+        do Screen.drawPixel((7 + (x * 20) + 13), (9 + (y * 20) + 8));
+        do Screen.drawPixel((7 + (x * 20) + 14), (9 + (y * 20) + 8));
+        do Screen.drawPixel((7 + (x * 20) + 15), (9 + (y * 20) + 8));
+        do Screen.drawPixel((7 + (x * 20) + 0), (9 + (y * 20) + 10));
+        do Screen.drawPixel((7 + (x * 20) + 1), (9 + (y * 20) + 10));
+        do Screen.drawPixel((7 + (x * 20) + 3), (9 + (y * 20) + 10));
+        do Screen.drawPixel((7 + (x * 20) + 4), (9 + (y * 20) + 10));
+        do Screen.drawPixel((7 + (x * 20) + 5), (9 + (y * 20) + 10));
+        do Screen.drawPixel((7 + (x * 20) + 6), (9 + (y * 20) + 10));
+        do Screen.drawPixel((7 + (x * 20) + 9), (9 + (y * 20) + 10));
+        do Screen.drawPixel((7 + (x * 20) + 10), (9 + (y * 20) + 10));
+        do Screen.drawPixel((7 + (x * 20) + 11), (9 + (y * 20) + 10));
+        do Screen.drawPixel((7 + (x * 20) + 12), (9 + (y * 20) + 10));
+        do Screen.drawPixel((7 + (x * 20) + 15), (9 + (y * 20) + 10));
+        do Screen.drawPixel((7 + (x * 20) + 0), (9 + (y * 20) + 11));
+        do Screen.drawPixel((7 + (x * 20) + 1), (9 + (y * 20) + 11));
+        do Screen.drawPixel((7 + (x * 20) + 3), (9 + (y * 20) + 11));
+        do Screen.drawPixel((7 + (x * 20) + 4), (9 + (y * 20) + 11));
+        do Screen.drawPixel((7 + (x * 20) + 5), (9 + (y * 20) + 11));
+        do Screen.drawPixel((7 + (x * 20) + 6), (9 + (y * 20) + 11));
+        do Screen.drawPixel((7 + (x * 20) + 7), (9 + (y * 20) + 11));
+        do Screen.drawPixel((7 + (x * 20) + 8), (9 + (y * 20) + 11));
+        do Screen.drawPixel((7 + (x * 20) + 9), (9 + (y * 20) + 11));
+        do Screen.drawPixel((7 + (x * 20) + 10), (9 + (y * 20) + 11));
+        do Screen.drawPixel((7 + (x * 20) + 11), (9 + (y * 20) + 11));
+        do Screen.drawPixel((7 + (x * 20) + 12), (9 + (y * 20) + 11));
+        do Screen.drawPixel((7 + (x * 20) + 14), (9 + (y * 20) + 11));
+        do Screen.drawPixel((7 + (x * 20) + 15), (9 + (y * 20) + 11));
+        do Screen.drawPixel((7 + (x * 20) + 0), (9 + (y * 20) + 12));
+        do Screen.drawPixel((7 + (x * 20) + 1), (9 + (y * 20) + 12));
+        do Screen.drawPixel((7 + (x * 20) + 3), (9 + (y * 20) + 12));
+        do Screen.drawPixel((7 + (x * 20) + 4), (9 + (y * 20) + 12));
+        do Screen.drawPixel((7 + (x * 20) + 5), (9 + (y * 20) + 12));
+        do Screen.drawPixel((7 + (x * 20) + 6), (9 + (y * 20) + 12));
+        do Screen.drawPixel((7 + (x * 20) + 9), (9 + (y * 20) + 12));
+        do Screen.drawPixel((7 + (x * 20) + 10), (9 + (y * 20) + 12));
+        do Screen.drawPixel((7 + (x * 20) + 11), (9 + (y * 20) + 12));
+        do Screen.drawPixel((7 + (x * 20) + 12), (9 + (y * 20) + 12));
+        do Screen.drawPixel((7 + (x * 20) + 0), (9 + (y * 20) + 14));
+        do Screen.drawPixel((7 + (x * 20) + 1), (9 + (y * 20) + 14));
+        do Screen.drawPixel((7 + (x * 20) + 2), (9 + (y * 20) + 14));
+        do Screen.drawPixel((7 + (x * 20) + 3), (9 + (y * 20) + 14));
+        do Screen.drawPixel((7 + (x * 20) + 4), (9 + (y * 20) + 14));
+        do Screen.drawPixel((7 + (x * 20) + 6), (9 + (y * 20) + 14));
+        do Screen.drawPixel((7 + (x * 20) + 7), (9 + (y * 20) + 14));
+        do Screen.drawPixel((7 + (x * 20) + 8), (9 + (y * 20) + 14));
+        do Screen.drawPixel((7 + (x * 20) + 9), (9 + (y * 20) + 14));
+        do Screen.drawPixel((7 + (x * 20) + 11), (9 + (y * 20) + 14));
+        do Screen.drawPixel((7 + (x * 20) + 12), (9 + (y * 20) + 14));
+        do Screen.drawPixel((7 + (x * 20) + 13), (9 + (y * 20) + 14));
+        do Screen.drawPixel((7 + (x * 20) + 14), (9 + (y * 20) + 14));
+        do Screen.drawPixel((7 + (x * 20) + 15), (9 + (y * 20) + 14));
+        do Screen.drawPixel((7 + (x * 20) + 0), (9 + (y * 20) + 15));
+        do Screen.drawPixel((7 + (x * 20) + 1), (9 + (y * 20) + 15));
+        do Screen.drawPixel((7 + (x * 20) + 2), (9 + (y * 20) + 15));
+        do Screen.drawPixel((7 + (x * 20) + 3), (9 + (y * 20) + 15));
+        do Screen.drawPixel((7 + (x * 20) + 4), (9 + (y * 20) + 15));
+        do Screen.drawPixel((7 + (x * 20) + 6), (9 + (y * 20) + 15));
+        do Screen.drawPixel((7 + (x * 20) + 7), (9 + (y * 20) + 15));
+        do Screen.drawPixel((7 + (x * 20) + 8), (9 + (y * 20) + 15));
+        do Screen.drawPixel((7 + (x * 20) + 9), (9 + (y * 20) + 15));
+        do Screen.drawPixel((7 + (x * 20) + 11), (9 + (y * 20) + 15));
+        do Screen.drawPixel((7 + (x * 20) + 12), (9 + (y * 20) + 15));
+        do Screen.drawPixel((7 + (x * 20) + 13), (9 + (y * 20) + 15));
+        do Screen.drawPixel((7 + (x * 20) + 14), (9 + (y * 20) + 15));
+        do Screen.drawPixel((7 + (x * 20) + 15), (9 + (y * 20) + 15));
+        /*
+        do Screen.setColor(true);
+        do Screen.drawRectangle((7 + (x * 20)), (9 + (y * 20)), (7 + (x * 20) + 16), (9 + (y * 20) + 16));
+        do Screen.setColor(false);
+        do Screen.drawCircle((7 + (x * 20)) + 8, (9 + (y * 20)) + 8, 6);
+        */
+        return;
+    }
+
+    function void draw_road(int x, int y){
+        do Screen.setColor(false);
+        do Screen.drawRectangle((7 + (x * 20)), (9 + (y * 20)), (7 + (x * 20) + 16), (9 + (y * 20) + 16));
+        return;
+    }
+
+
+    function void print_wall(Array map){
+        var int i, j;
+        var Array xmap;
+        let i = 0;
+        while( i < 25 ) {
+            let xmap = Array.new(11);
+            let xmap = map[i];
+            let j = 0;
+            while( j < 11 ) {
+                if (xmap[j] = 1){
+                    do Map.draw_wall(i, j + 1);
+                }
+                if (xmap[j] = 2){
+                    do Map.draw_breakable_wall(i, j + 1);
+                }
+                if (xmap[j] = 3){
+                    do Bomb.draw_bombs(i, j + 1);
+                }
+                let j = j + 1;
+            }
+            let i = i + 1;
+        }
+        return;
+    }
+}
