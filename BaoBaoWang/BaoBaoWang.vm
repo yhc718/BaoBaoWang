@@ -1,0 +1,324 @@
+function BaoBaoWang.clear_character 0
+push constant 0
+call Screen.setColor 1
+pop temp 0
+push constant 15
+push constant 20
+push argument 0
+call Math.multiply 2
+add
+push constant 256
+push constant 19
+push constant 20
+push argument 1
+call Math.multiply 2
+add
+sub
+push constant 8
+call Screen.drawCircle 3
+pop temp 0
+push constant 0
+return
+function BaoBaoWang.draw_character 0
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push constant 15
+push constant 20
+push argument 0
+call Math.multiply 2
+add
+push constant 256
+push constant 19
+push constant 20
+push argument 1
+call Math.multiply 2
+add
+sub
+push constant 8
+call Screen.drawCircle 3
+pop temp 0
+push constant 0
+call Screen.setColor 1
+pop temp 0
+push constant 15
+push constant 20
+push argument 0
+call Math.multiply 2
+add
+push constant 4
+sub
+push constant 256
+push constant 19
+push constant 20
+push argument 1
+call Math.multiply 2
+add
+sub
+push constant 2
+call Screen.drawCircle 3
+pop temp 0
+push constant 15
+push constant 20
+push argument 0
+call Math.multiply 2
+add
+push constant 4
+add
+push constant 256
+push constant 19
+push constant 20
+push argument 1
+call Math.multiply 2
+add
+sub
+push constant 2
+call Screen.drawCircle 3
+pop temp 0
+push constant 0
+return
+function BaoBaoWang.move_x 1
+push argument 2
+push constant 130
+eq
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push argument 0
+push constant 0
+eq
+not
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push argument 0
+push constant 1
+sub
+push argument 3
+add
+pop pointer 1
+push that 0
+pop local 0
+push constant 10
+push argument 1
+sub
+push local 0
+add
+pop pointer 1
+push that 0
+push constant 0
+eq
+push constant 10
+push argument 1
+sub
+push local 0
+add
+pop pointer 1
+push that 0
+push constant 3
+eq
+or
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
+push argument 0
+push argument 1
+call BaoBaoWang.clear_character 2
+pop temp 0
+push argument 0
+push constant 1
+sub
+push argument 1
+call BaoBaoWang.draw_character 2
+pop temp 0
+push argument 0
+push constant 1
+sub
+return
+label IF_FALSE2
+label IF_FALSE1
+label IF_FALSE0
+push argument 2
+push constant 132
+eq
+if-goto IF_TRUE3
+goto IF_FALSE3
+label IF_TRUE3
+push argument 0
+push constant 24
+eq
+not
+if-goto IF_TRUE4
+goto IF_FALSE4
+label IF_TRUE4
+push argument 0
+push constant 1
+add
+push argument 3
+add
+pop pointer 1
+push that 0
+pop local 0
+push constant 10
+push argument 1
+sub
+push local 0
+add
+pop pointer 1
+push that 0
+push constant 0
+eq
+push constant 10
+push argument 1
+sub
+push local 0
+add
+pop pointer 1
+push that 0
+push constant 3
+eq
+or
+if-goto IF_TRUE5
+goto IF_FALSE5
+label IF_TRUE5
+push argument 0
+push argument 1
+call BaoBaoWang.clear_character 2
+pop temp 0
+push argument 0
+push constant 1
+add
+push argument 1
+call BaoBaoWang.draw_character 2
+pop temp 0
+push argument 0
+push constant 1
+add
+return
+label IF_FALSE5
+label IF_FALSE4
+label IF_FALSE3
+push argument 0
+return
+function BaoBaoWang.move_y 1
+push argument 0
+push argument 3
+add
+pop pointer 1
+push that 0
+pop local 0
+push argument 2
+push constant 131
+eq
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push argument 1
+push constant 10
+eq
+not
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push constant 10
+push argument 1
+push constant 1
+add
+sub
+push local 0
+add
+pop pointer 1
+push that 0
+push constant 0
+eq
+push constant 10
+push argument 1
+push constant 1
+add
+sub
+push local 0
+add
+pop pointer 1
+push that 0
+push constant 3
+eq
+or
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
+push argument 0
+push argument 1
+call BaoBaoWang.clear_character 2
+pop temp 0
+push argument 0
+push argument 1
+push constant 1
+add
+call BaoBaoWang.draw_character 2
+pop temp 0
+push argument 1
+push constant 1
+add
+return
+label IF_FALSE2
+label IF_FALSE1
+label IF_FALSE0
+push argument 2
+push constant 133
+eq
+if-goto IF_TRUE3
+goto IF_FALSE3
+label IF_TRUE3
+push argument 1
+push constant 0
+eq
+not
+if-goto IF_TRUE4
+goto IF_FALSE4
+label IF_TRUE4
+push constant 10
+push argument 1
+push constant 1
+sub
+sub
+push local 0
+add
+pop pointer 1
+push that 0
+push constant 0
+eq
+push constant 10
+push argument 1
+push constant 1
+sub
+sub
+push local 0
+add
+pop pointer 1
+push that 0
+push constant 3
+eq
+or
+if-goto IF_TRUE5
+goto IF_FALSE5
+label IF_TRUE5
+push argument 0
+push argument 1
+call BaoBaoWang.clear_character 2
+pop temp 0
+push argument 0
+push argument 1
+push constant 1
+sub
+call BaoBaoWang.draw_character 2
+pop temp 0
+push argument 1
+push constant 1
+sub
+return
+label IF_FALSE5
+label IF_FALSE4
+label IF_FALSE3
+push argument 1
+return

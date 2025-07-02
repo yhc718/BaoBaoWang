@@ -1,0 +1,337 @@
+function Main.reset 0
+push static 6
+push constant 1
+eq
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+call Main.level1_init 0
+pop temp 0
+label IF_FALSE0
+push static 6
+push constant 2
+eq
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+call Main.level2_init 0
+pop temp 0
+label IF_FALSE1
+push static 6
+push constant 3
+eq
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
+call Main.level3_init 0
+pop temp 0
+label IF_FALSE2
+push constant 0
+return
+function Main.level1_init 0
+push constant 1
+pop static 6
+push constant 0
+pop static 2
+push constant 0
+pop static 3
+push constant 100
+pop static 5
+push constant 5
+pop static 4
+call Map.print_map 0
+pop temp 0
+call Level1.level1_array 0
+pop static 7
+push static 7
+call Map.print_wall 1
+pop temp 0
+push static 4
+call Bomb.bombs_number 1
+pop temp 0
+push static 5
+call Steps.steps_number 1
+pop temp 0
+push static 2
+push static 3
+call BaoBaoWang.draw_character 2
+pop temp 0
+push constant 0
+return
+function Main.level2_init 0
+push constant 2
+pop static 6
+push constant 0
+pop static 2
+push constant 0
+pop static 3
+push constant 100
+pop static 5
+push constant 5
+pop static 4
+call Map.print_map 0
+pop temp 0
+call Level2.level2_array 0
+pop static 7
+push static 7
+call Map.print_wall 1
+pop temp 0
+push static 4
+call Bomb.bombs_number 1
+pop temp 0
+push static 5
+call Steps.steps_number 1
+pop temp 0
+push static 2
+push static 3
+call BaoBaoWang.draw_character 2
+pop temp 0
+push constant 0
+return
+function Main.level3_init 0
+push constant 3
+pop static 6
+push constant 0
+pop static 2
+push constant 0
+pop static 3
+push constant 60
+pop static 5
+push constant 3
+pop static 4
+call Map.print_map 0
+pop temp 0
+call Level3.level3_array 0
+pop static 7
+push static 7
+call Map.print_wall 1
+pop temp 0
+push static 4
+call Bomb.bombs_number 1
+pop temp 0
+push static 5
+call Steps.steps_number 1
+pop temp 0
+push static 2
+push static 3
+call BaoBaoWang.draw_character 2
+pop temp 0
+push constant 0
+return
+function Main.main 0
+call Cover.make_cover 0
+pop temp 0
+label WHILE_EXP0
+push static 0
+push constant 128
+eq
+not
+not
+if-goto WHILE_END0
+call Keyboard.keyPressed 0
+pop static 0
+push static 0
+push constant 142
+eq
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+call Instruction.instructions 0
+pop temp 0
+label IF_FALSE0
+goto WHILE_EXP0
+label WHILE_END0
+call Main.level1_init 0
+pop temp 0
+label WHILE_EXP1
+push static 0
+push constant 0
+eq
+not
+not
+if-goto WHILE_END1
+call Keyboard.keyPressed 0
+pop static 0
+goto WHILE_EXP1
+label WHILE_END1
+label WHILE_EXP2
+push constant 0
+not
+not
+if-goto WHILE_END2
+label WHILE_EXP3
+push static 5
+push constant 0
+gt
+not
+if-goto WHILE_END3
+push constant 0
+pop static 0
+label WHILE_EXP4
+push static 0
+push constant 0
+eq
+not
+if-goto WHILE_END4
+call Keyboard.keyPressed 0
+pop static 0
+goto WHILE_EXP4
+label WHILE_END4
+push static 0
+pop static 1
+label WHILE_EXP5
+push static 0
+push constant 0
+eq
+not
+not
+if-goto WHILE_END5
+call Keyboard.keyPressed 0
+pop static 0
+goto WHILE_EXP5
+label WHILE_END5
+push static 1
+pop static 0
+push static 5
+push static 2
+push static 3
+push static 0
+push static 7
+call Steps.move_step 5
+pop static 5
+push static 2
+push static 3
+push static 0
+push static 7
+call BaoBaoWang.move_x 4
+pop static 2
+push static 2
+push static 3
+push static 0
+push static 7
+call BaoBaoWang.move_y 4
+pop static 3
+push static 4
+push static 2
+push static 3
+push static 0
+push static 7
+call Bomb.move_bombs 5
+pop static 4
+push static 2
+push static 3
+push static 4
+push static 0
+push static 7
+call Bomb.change_map 5
+pop static 7
+push static 4
+call Bomb.bombs_number 1
+pop temp 0
+push static 5
+call Steps.steps_number 1
+pop temp 0
+push static 2
+push constant 24
+eq
+push static 3
+push constant 10
+eq
+and
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push static 6
+call Pass.level_passed 1
+pop temp 0
+push static 6
+push constant 3
+eq
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
+push constant 0
+return
+label IF_FALSE2
+label WHILE_EXP6
+push static 0
+push constant 128
+eq
+not
+not
+if-goto WHILE_END6
+call Keyboard.keyPressed 0
+pop static 0
+goto WHILE_EXP6
+label WHILE_END6
+label WHILE_EXP7
+push static 0
+push constant 0
+eq
+not
+not
+if-goto WHILE_END7
+call Keyboard.keyPressed 0
+pop static 0
+goto WHILE_EXP7
+label WHILE_END7
+push static 6
+push constant 2
+eq
+if-goto IF_TRUE3
+goto IF_FALSE3
+label IF_TRUE3
+call Main.level3_init 0
+pop temp 0
+label IF_FALSE3
+push static 6
+push constant 1
+eq
+if-goto IF_TRUE4
+goto IF_FALSE4
+label IF_TRUE4
+call Main.level2_init 0
+pop temp 0
+label IF_FALSE4
+label IF_FALSE1
+push static 0
+push constant 129
+eq
+if-goto IF_TRUE5
+goto IF_FALSE5
+label IF_TRUE5
+call Main.reset 0
+pop temp 0
+label IF_FALSE5
+goto WHILE_EXP3
+label WHILE_END3
+call Fail.level_failed 0
+pop temp 0
+label WHILE_EXP8
+push static 0
+push constant 129
+eq
+not
+not
+if-goto WHILE_END8
+call Keyboard.keyPressed 0
+pop static 0
+goto WHILE_EXP8
+label WHILE_END8
+label WHILE_EXP9
+push static 0
+push constant 0
+eq
+not
+not
+if-goto WHILE_END9
+call Keyboard.keyPressed 0
+pop static 0
+goto WHILE_EXP9
+label WHILE_END9
+call Main.reset 0
+pop temp 0
+goto WHILE_EXP2
+label WHILE_END2
+push constant 0
+return
